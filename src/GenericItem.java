@@ -6,8 +6,25 @@ public class GenericItem implements Cloneable {
     public float price; //Цена товара
     public Category category;
     public GenericItem analog;
+    static int currentID;
     void printAll(){
         System.out.printf("ID: %d , Name: %-20s , price:%5.2f, category: %s \n",ID,name,price, category);
+    }
+    public GenericItem(){
+        this.ID = GenericItem.currentID++;
+    }
+    public GenericItem(String name, float price, Category category) {
+        this.ID = GenericItem.currentID++;
+        this.name = name;
+        this.price = price;
+        this.category = category;
+    }
+
+    public GenericItem(String name, float price, GenericItem analog) {
+        this.ID = GenericItem.currentID++;
+        this.name = name;
+        this.price = price;
+        this.analog = analog;
     }
 
     @Override

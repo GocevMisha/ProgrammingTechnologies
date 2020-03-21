@@ -20,9 +20,8 @@ public class Main {
         genericItemThree.price = 3.3F;
         genericItemThree.category = Category.GENERAL;
         genericItemThree.printAll();
-        FoodItem foodItem = new FoodItem();
+        FoodItem foodItem = new FoodItem("food");
         foodItem.ID = 4;
-        foodItem.name = "food";
         foodItem.price = 4.4f;
         foodItem.category = Category.FOOD;
         foodItem.dateOfIncome = new Date();
@@ -37,9 +36,8 @@ public class Main {
         for(GenericItem item: mas){
             item.printAll();
         }
-        FoodItem foodItemTwo = new FoodItem();
+        FoodItem foodItemTwo = new FoodItem("foodTwo");
         foodItemTwo.ID = 6;
-        foodItemTwo.name = "foodTwo";
         foodItemTwo.price = 6.6f;
         foodItemTwo.category = Category.FOOD;
         foodItemTwo.dateOfIncome = new Date();
@@ -48,5 +46,10 @@ public class Main {
         FoodItem foodItemThree = (FoodItem) foodItem.clone();
         System.out.println(foodItem.equals(foodItemThree));
         System.out.println(foodItemThree.toString());
+
+        String line = "Конфеты ’Маска’;45;120";
+        String[] item_fld = line.split(";");
+        FoodItem foodItemStringer = new FoodItem(item_fld[0], Float.parseFloat(item_fld[1]), Short.parseShort(item_fld[2]));
+        foodItemStringer.printAll();
     }
 }

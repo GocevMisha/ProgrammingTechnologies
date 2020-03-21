@@ -4,7 +4,20 @@ import java.util.Objects;
 public class FoodItem extends GenericItem implements Cloneable{
     Date dateOfIncome; // дата производства
     short expires; // срок годности
-
+    public FoodItem analog;
+    public FoodItem(String name, float price, FoodItem analog, Date
+            date, short expires){
+        this.price = price;
+        this.analog = analog;
+        this.dateOfIncome = date;
+        this.expires = expires;
+    }
+    public FoodItem(String name){
+        this(name, 0, null, null, (short) 0);
+    }
+    public FoodItem(String name, float price, short expires){
+        this(name,price,null, null, expires);
+    }
     @Override
     void printAll() {
         super.printAll();
