@@ -40,6 +40,11 @@ public class FoodItem extends GenericItem implements Cloneable{
     }
 
     @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), dateOfIncome, expires, analog);
+    }
+
+    @Override
     public String toString() {
         return "FoodItem{" +
                 "dateOfIncome=" + dateOfIncome +

@@ -24,6 +24,11 @@ public class TechicalItem extends GenericItem implements Cloneable{
     }
 
     @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), warrantyTime);
+    }
+
+    @Override
     public String toString() {
         return "TechicalItem{" +
                 "warrantyTime=" + warrantyTime +

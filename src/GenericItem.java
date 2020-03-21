@@ -44,8 +44,10 @@ public class GenericItem implements Cloneable {
                 category == that.category;
     }
 
-
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(ID, name, price, category, analog);
+    }
 
     @Override
     public String toString() {
