@@ -1,12 +1,63 @@
+package billing.stocklist;
+
 import java.util.Objects;
 
 public class GenericItem implements Cloneable {
-    public int ID; // ID товара
-    public String name; // Наименование товара
-    public float price; //Цена товара
-    public Category category;
-    public GenericItem analog;
-    static int currentID;
+    private int ID; // ID товара
+    private String name; // Наименование товара
+    private float price; //Цена товара
+    private Category category;
+    private GenericItem analog;
+    private static int currentID;
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    public GenericItem getAnalog() {
+        return analog;
+    }
+
+    public void setAnalog(GenericItem analog) {
+        this.analog = analog;
+    }
+
+    public static int getCurrentID() {
+        return currentID;
+    }
+
+    public static void setCurrentID(int currentID) {
+        GenericItem.currentID = currentID;
+    }
+
     void printAll(){
         System.out.printf("ID: %d , Name: %-20s , price:%5.2f, category: %s \n",ID,name,price, category);
     }
@@ -51,7 +102,7 @@ public class GenericItem implements Cloneable {
 
     @Override
     public String toString() {
-        return "GenericItem{" +
+        return "billing.stocklist.GenericItem{" +
                 "ID=" + ID +
                 ", name='" + name + '\'' +
                 ", price=" + price +

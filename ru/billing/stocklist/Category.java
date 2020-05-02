@@ -1,3 +1,5 @@
+package billing.stocklist;
+
 public enum Category {
     FOOD,
     PRINT,

@@ -1,7 +1,17 @@
+package billing.stocklist;
+
 import java.util.Objects;
 
 public class TechicalItem extends GenericItem implements Cloneable{
-    short warrantyTime; // гарантийный срок (суток)
+    private short warrantyTime; // гарантийный срок (суток)
+
+    public short getWarrantyTime() {
+        return warrantyTime;
+    }
+
+    public void setWarrantyTime(short warrantyTime) {
+        this.warrantyTime = warrantyTime;
+    }
 
     @Override
     void printAll() {
@@ -30,12 +40,12 @@ public class TechicalItem extends GenericItem implements Cloneable{
 
     @Override
     public String toString() {
-        return "TechicalItem{" +
+        return "billing.stocklist.TechicalItem{" +
                 "warrantyTime=" + warrantyTime +
-                ", ID=" + ID +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                ", category=" + category +
+                ", ID=" + getID() +
+                ", name='" + getName() + '\'' +
+                ", price=" + getPrice() +
+                ", category=" + getCategory() +
                 '}';
     }
 }
