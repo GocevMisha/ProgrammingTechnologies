@@ -1,5 +1,7 @@
 package billing.stocklist;
 
+import billing.exceptions.ItemAlreadyExistsException;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -23,7 +25,10 @@ public class ItemCatalog {
         this.ALCatalog = ALCatalog;
     }
 
-    public void addItem(GenericItem item) {
+    public void addItem(GenericItem item) throws ItemAlreadyExistsException {
+        if (catalog.containsKey(item.getID())) {
+            throw new ItemAlreadyExistsException();
+        }
         catalog.put(item.getID(), item);
         ALCatalog.add(item);
     }
